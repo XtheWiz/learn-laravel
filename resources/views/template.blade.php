@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Example Reminder App</title>
-  <link rel="stylesheet" href="{{elixir('app.css')}}">
+  <link rel="stylesheet" href="{{elixir('css/app.css')}}">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">xample Reminder App</a>
+              <a class="navbar-brand" href="#">Example Reminder App</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">

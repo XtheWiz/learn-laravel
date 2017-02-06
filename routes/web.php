@@ -10,9 +10,11 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+//
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//
+// Route::get('/profile', 'ProfileController@getProfile');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/profile', 'ProfileController@getProfile');
+Route::get('/', 'ReminderController@home');
