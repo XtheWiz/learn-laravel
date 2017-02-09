@@ -9,34 +9,32 @@ use Illuminate\Http\Request;
 
 //Eloquent
 use App\Reminder;
+use App\ReminderType;
 
 class ReminderController extends Controller
 {
     public function home() {
-      // $reminders = DB::table('reminder')->orderBy('id', 'dsc')->get();
       $reminders = Reminder::orderBy('id', 'desc')->get();
+      $types = ReminderType::get();
 
-      return view('home', ['reminders' => $reminders]);
+      return view('home', ['reminders' => $reminders, 'types' => $types]);
     }
 
     public function addReminder(Request $request) {
-      // $body = $request->reminder;
-      $reminder = new Reminder();
 
+      $reminder = new Reminder();
       $reminder->body = $request->reminder;
       $reminder->isFinished = false;
+      $reminder->ReminderType = $request->type;
       $reminder->createdUserID = 1;
 
       $reminder->save();
-      // DB::table('Reminder')->insert(['body'=>$body, 'isFinished'=>false, 'createdUserID'=>2]);
 
       return back();
     }
 
     public function deleteReminder(Request $request) {
       $id = $request->id;
-
-      // DB::table('reminder')->where('id', $id)->delete();
       Reminder::find($id)->delete();
 
       return back()->with('Are you finish this job?');
