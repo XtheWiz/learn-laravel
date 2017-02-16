@@ -1,5 +1,9 @@
 <div class="row">
-  <h2>Your Reminders</h2>
+  <h2>Your Reminder(s) </h2>
+
+  <div class="row">
+    <a href="/finished">Show Finished Reminder</a>
+  </div>
 
   <div class="row">
     @foreach ($reminders as $reminder)

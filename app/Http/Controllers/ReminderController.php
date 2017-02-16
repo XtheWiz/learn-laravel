@@ -40,13 +40,8 @@ class ReminderController extends Controller
       return back()->with('Are you finish this job?');
     }
 
-    public function finishReminder(Request $request) {
-      $id = $request->id;
-      $reminder = Reminder::find($id);
-      $reminder->isFinished = true;
+    public function showFinishReminder() {
 
-      $reminder->save();
-
-      return back()->with($reminder->body + " is finished");
+      return view('FinishReminder', ['reminders' => Reminder::onlyTrashed()->get()]);
     }
 }
