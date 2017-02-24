@@ -26,3 +26,9 @@ Route::delete('/reminder/delete', 'ReminderController@deleteReminder');
 Route::post('/remindertype/new', 'ReminderTypeController@addReminderType');
 
 Route::get('/finished', 'ReminderController@showFinishReminder');
+
+Route::get('/remindertype', 'ReminderTypeController@listReminderType');
+
+Route::get('/file', 'FileController@home');
+Route::post('/file/upload', 'FileController@upload');
+Route::get('/file/{fileName}', 'FileController@download');
